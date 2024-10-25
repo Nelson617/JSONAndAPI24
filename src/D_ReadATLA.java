@@ -22,7 +22,7 @@ public class D_ReadATLA {
 
     public void pull() throws ParseException {
         String output = "";
-        String jsonString="";
+        String jsonString = "";
         try {
 
             URL url = new URL("https://last-airbender-api.fly.dev/api/v1/characters"); /** Your API's URL goes here */
@@ -62,11 +62,22 @@ public class D_ReadATLA {
 
         /* TODO : print the allies of the first character in the JSON */
         // here is a line to get you started:
-        JSONObject character = (JSONObject) jsonArray.get(0); // 0 index is the first character
+        JSONObject character = (JSONObject) jsonArray.get(0);// 0 index is the first character
+        JSONArray allies = (JSONArray) character.get("allies");
+        System.out.println("Allies of " + character.get("name") + ":");
+        for (Object ally : allies) {
+            System.out.println(ally);
+        }
 
         /* TODO : print the "name" of every character in the jsonArray */
+        System.out.println("\nNames of all characters:");
+        for (Object obj : jsonArray) {
+            JSONObject charObj = (JSONObject) obj;
+            System.out.println(charObj.get("name"));
 
+
+        }
 
     }
-
 }
+

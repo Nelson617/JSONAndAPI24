@@ -19,7 +19,11 @@ public class B_JsonArrayPractice {
 
         // get a single value out of the json
         String height = (String) json.get("height");
+        int h = Integer.parseInt(height);
         System.out.println("HEIGHT: " + height);
+
+        String birth_Year = (String) json.get("birth_Year");
+        System.out.println("Year: " + birth_Year);
 
         // get a json array out of the json
         JSONArray filmsArray = (JSONArray) json.get("films");
@@ -30,5 +34,15 @@ public class B_JsonArrayPractice {
             System.out.println(film);
         }
 
-    } // end of constructor
-}
+
+            JSONArray starshipsArray = (JSONArray) json.get("starships");
+            int t = starshipsArray.size();
+            System.out.println("Starships: ");
+            for (int r = 0; r < t; r++) {
+                String starships = (String) starshipsArray.get(r);
+                System.out.println(starships);
+            }
+
+        } // end of constructor
+    }
+

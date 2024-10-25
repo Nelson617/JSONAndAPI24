@@ -17,7 +17,9 @@ public class A_JsonSimplePractice {
         System.out.println("JOSN: " + file);
 
         // extract one value from the JSON
-        System.out.print("Tuition cost: " + file.get("Tuition Fees"));
+        System.out.println("Tuition cost: " + file.get("Tuition Fees"));
+
+        System.out.println("Student ID: " + file.get("Student ID"));
     }
 }
 
